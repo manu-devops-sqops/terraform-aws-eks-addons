@@ -632,7 +632,7 @@ variable "argorollout_config" {
     argorollout_ingress_load_balancer = "nlb"
     private_alb_enabled               = false
     alb_acm_certificate_arn           = ""
-    chart_version                     = "2.38.0"
+    chart_version                     = "2.39.5"
   }
 }
 
@@ -720,7 +720,7 @@ variable "cluster_proportional_autoscaler_enabled" {
 
 variable "cluster_proportional_autoscaler_chart_version" {
   description = "Version of the cluster proportional autoscaler helm chart"
-  default     = "1.1.0"
+  default     = "v1.9.0"
   type        = string
 }
 
@@ -780,13 +780,13 @@ variable "external_secrets_version" {
 
 variable "cert_manager_version" {
   description = "Version of the cert manager addon"
-  default     = "v1.15.1"
+  default     = "v1.17.2"
   type        = string
 }
 
 variable "reloader_version" {
   description = "Version of the reloader addon"
-  default     = "v1.0.115"
+  default     = "v1.4.2"
   type        = string
 }
 
@@ -804,7 +804,7 @@ variable "private_ingress_nginx_version" {
 
 variable "aws_load_balancer_controller_version" {
   description = "Version of the aws load balancer controller addon"
-  default     = "1.8.1"
+  default     = "1.13.2"
   type        = string
 }
 
@@ -816,19 +816,19 @@ variable "kubernetes_dashboard_version" {
 
 variable "argocd_version" {
   description = "Version of the argocd addon"
-  default     = "7.3.11"
+  default     = "8.0.4"
   type        = string
 }
 
 variable "argoworkflow_version" {
   description = "Version of the argoworkflow addon"
-  default     = "0.29.2"
+  default     = "0.45.15"
   type        = string
 }
 
 variable "kubeclarity_version" {
   description = "Version of the kubeclarity addon"
-  default     = "2.23.0"
+  default     = "2.23.3"
   type        = string
 }
 

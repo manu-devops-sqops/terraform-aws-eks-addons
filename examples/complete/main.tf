@@ -107,7 +107,7 @@ module "eks-addons" {
 
   ## ClusterProportionalAutoscaler (Configured for CoreDNS)
   cluster_proportional_autoscaler_enabled       = false # to enable cluster proportional autoscaler
-  cluster_proportional_autoscaler_chart_version = "1.1.0"
+  cluster_proportional_autoscaler_chart_version = "v1.9.0"
   cluster_proportional_autoscaler_helm_config   = [file("${path.module}/config/cluster-proportional-autoscaler.yaml")]
 
   ## EXTERNAL-SECRETS
@@ -119,7 +119,7 @@ module "eks-addons" {
 
   ## CERT-MANAGER
   cert_manager_enabled = false # to enable Cert-manager
-  cert_manager_version = "v1.15.1"
+  cert_manager_version = "v1.17.2"
   cert_manager_helm_config = {
     values                         = [file("${path.module}/config/cert-manager.yaml")]
     enable_service_monitor         = false # to enable monitoring for Cert Manager
@@ -129,7 +129,7 @@ module "eks-addons" {
 
   ## CONFIG-RELOADER
   reloader_enabled = false # to enable config reloader in the EKS cluster
-  reloader_version = "v1.0.115"
+  reloader_version = "v1.4.2"
   reloader_helm_config = {
     values                 = [file("${path.module}/config/reloader.yaml")]
     enable_service_monitor = false # to enable monitoring for reloader
@@ -157,7 +157,7 @@ module "eks-addons" {
 
   ## AWS-APPLICATION-LOAD-BALANCER-CONTROLLER
   aws_load_balancer_controller_enabled = false # to enable load balancer controller
-  aws_load_balancer_controller_version = "1.8.1"
+  aws_load_balancer_controller_version = "1.13.2"
   aws_load_balancer_controller_helm_config = {
     values                        = [file("${path.module}/config/aws-alb.yaml")]
     namespace                     = "alb" # enter namespace according to the requirement (example: "alb")
@@ -179,7 +179,7 @@ module "eks-addons" {
 
   ## ArgoCD
   argocd_enabled = false
-  argocd_version = "7.3.11"
+  argocd_version = "8.0.4"
   argocd_config = {
     hostname                     = "argocd.rnd.squareops.in"
     expose_dashboard             = true
@@ -200,7 +200,7 @@ module "eks-addons" {
 
   ## ArgoCD-Workflow
   argoworkflow_enabled = false
-  argoworkflow_version = "0.29.2"
+  argoworkflow_version = "0.45.15"
   argoworkflow_config = {
     values                             = file("${path.module}/config/argocd-workflow.yaml")
     namespace                          = local.argocd_namespace
@@ -224,7 +224,7 @@ module "eks-addons" {
     argorollout_ingress_load_balancer = "nlb"   # Pass either "nlb/alb" to choose load balancer controller as ingress-nginx controller or ALB controller
     private_alb_enabled               = "false" # to enable Internal (Private) ALB , set this and aws_load_balancer_controller_enabled "true" together
     alb_acm_certificate_arn           = ""      # If using ALB in above parameter, ensure you provide the ACM certificate ARN for SSL.
-    chart_version                     = "2.38.0"
+    chart_version                     = "2.39.5"
   }
 
   # VELERO
@@ -244,7 +244,7 @@ module "eks-addons" {
 
   ## KUBECLARITY
   kubeclarity_enabled  = false # to enable kube clarity
-  kubeclarity_version  = "2.23.0"
+  kubeclarity_version  = "2.23.3"
   kubeclarity_hostname = "kubeclarity.prod.in"
 
   ## KUBECOST

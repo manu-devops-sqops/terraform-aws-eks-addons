@@ -28,5 +28,5 @@ variable "addon_context" {
 variable "chart_version" {
   description = "Helm cart version for karpenter CRDs"
   type        = string
-  default     = "1.1.0"
+  default     = "v1.9.0"
 }

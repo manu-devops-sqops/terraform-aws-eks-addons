@@ -15,7 +15,7 @@ variable "argocd_config" {
 
 variable "chart_version" {
   type        = string
-  default     = "7.3.11"
+  default     = "8.0.4"
   description = "Version of the Argocd chart that will be used to deploy Argocd application."
 }
 

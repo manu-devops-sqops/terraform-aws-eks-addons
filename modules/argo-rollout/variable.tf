@@ -21,7 +21,7 @@ variable "argorollout_config" {
 }
 
 variable "chart_version" {
-  default     = "2.38.0"
+  default     = "2.39.5"
   type        = string
   description = "Argo rollout chart version"
 }

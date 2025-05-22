@@ -28,7 +28,7 @@ variable "argoworkflow_config" {
 }
 
 variable "chart_version" {
-  default     = "0.29.2"
+  default     = "0.45.15"
   type        = string
   description = "Argo workflow chart version"
 }
